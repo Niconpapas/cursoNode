@@ -1,0 +1,44 @@
+npm init --->
+    -y valores default
+
+node
+    file.js ---> Execute
+
+git
+    status ---> files status
+    add fileName ---> adds to the commit
+    commit -m "message" -m "description"
+    commit -a ---> add all files
+    push origin *branch* ---> to a remote repo | maste
+    push -u origin *branch* ---> set default push
+
+        Generate ssh KEY
+        ssh-keygen -t rsa -b 4096 -C "githubemailAddresss"
+            -> /User/*userNAme*/.ssh/id_rsa
+                input key name
+
+            search for key 
+                ls | grep *keyName
+
+                .pub is the one you upload
+
+                    cat *keyName ---> print key
+            On github
+                -> setting -> ssh ang gpt keys
+                    -> new ssh key
+                        -> paste key
+        https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+    
+    remote add origin *link2The repo*
+
+    checkout *branch*  ---> switch to branch
+    checkout -b *bracnh" ----> switch and creates new branch
+    branch ---> see branches
+    diff *otherBranch* ---> compares curretn vs target branch
+    pull ---> get changes from repo
+    branch -d *branch* ---> deletes branch
+    merge *sourceBranch*  ---> brings changes from source
+        conflicts 
+            change and commit
+    reset *fileName ---> reset stage for commit
+    reset HEAD~1 ---> reset to the last commit
