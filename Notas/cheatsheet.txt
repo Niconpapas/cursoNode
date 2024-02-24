@@ -1,5 +1,8 @@
 npm init --->
     -y valores default
+npm install
+            -g  global
+            --dev solo para dev
 
 node
     file.js ---> Execute
@@ -40,5 +43,7 @@ git
     merge *sourceBranch*  ---> brings changes from source
         conflicts 
             change and commit
+    log ---> logs the commit
     reset *fileName ---> reset stage for commit
+    reset *commitHashFromLogs*
     reset HEAD~1 ---> reset to the last commit

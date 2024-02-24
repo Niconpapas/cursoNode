@@ -1,5 +1,4 @@
 let http = require('node:http')
-var asd = 1;
 
 function serverStart() {
     console.log("http Start");

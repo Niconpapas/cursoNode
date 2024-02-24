@@ -2,11 +2,18 @@
   "name": "cursonode",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node ./src/index.js", 
+    "dev" : "nodemon ./src/index.js",
+    "C2-http" : "nodemon ./Clase2/http/index2.js",
+    "C2-express" : "nodemon ./Clase2/express/index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
