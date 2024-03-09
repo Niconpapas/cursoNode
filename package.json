@@ -5,15 +5,17 @@
   "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node ./src/index.js", 
-    "dev" : "nodemon ./src/index.js",
-    "C2-http" : "nodemon ./Clase2/http/index2.js",
-    "C2-express" : "nodemon ./Clase2/express/index.js"
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js",
+    "C2-http": "nodemon ./Clase2/http/index2.js",
+    "C2-express": "nodemon ./Clase2/express/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "hbs": "^4.2.0"
   }
 }

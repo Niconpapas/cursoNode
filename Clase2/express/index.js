@@ -1,41 +1,31 @@
 console.log("express-START");
 
-//ES5
-
-
 const express = require('express');
+const { Middleware, encryptMD } = require('./services/middlewares.js');
+const usuarioRouter = require('./routes/usuarioRouter.js');
+const path = require('path');
+const userHome = require('./routes/userHome.js')
+const hbs = require('hbs');
 const app = express();
 
-PORT = 3000;
+//Uso de los mdws
+app.use(Middleware);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, '/public')));
 
-//GET
-app.get('/', (req, resp) => {
-    console.log(req);
-    console.log(req.url);
-    console.log(req.method);
-    resp.status(200).send('Hola desde el get de expresss');
+//Set motor de plantilla - SSR
+app.set('view engine', 'hbs');
 
-});
+//Set la carpeta donde busca los archivos de plantilla
+app.set('views', path.join(__dirname, '/views'));
 
+//Especificar la carpeta donde van a estar los partia views
+hbs.registerPartials(path.join(__dirname, 'views/partials'));
 
-app.get('/index', (req, resp) => {
-    resp.sendFile(__dirname + '/public/pages/index.html');
-});
-
-app.get('/descarga', (req, resp) => {
-    resp.download(__dirname + '/public/files/descarga.txt');
-});
-
-//POST
-//app.post();
-
-//DELETE
-//app.delete();
-
-//UPDATE
-//app.put();
+//Rutas
+app.use('/', userHome);
+app.use('/api/users', usuarioRouter);
 
 
-app.listen(PORT, () =>{
-    console.log(`Server Up in http://localhost:${PORT}`);
-})
+module.exports = app;
